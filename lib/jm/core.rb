@@ -1,8 +1,8 @@
-require "jm/core/version"
+require 'securerandom'
 require 'virtus'
 require 'wisper'
 
-Dir.glob(File.join(File.dirname(__FILE__) + '/core/**.rb'), &method(:require))
+Dir[File.dirname(__FILE__) + '/core/**/*.rb'].each{ |file| require_relative file }
 
 module Jm
   module Core
