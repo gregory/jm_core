@@ -1,31 +1,20 @@
 module Jm
   module Core
     class Player
-      include Virtus.model
-      include Wisper::Publisher
+      include Domain::Entity
 
       attribute :uuid, String
       attribute :name, String
       attribute :nick, String
 
-      def self.create(params)
-        player = self.new
-        params = params.merge(uuid: new_uuid)
-
-        player.player_created params
-        player.send(:publish, :player_created, params)
-
-        player
-      end
-
-      def player_created(event)
-        self.attributes = event
+      def create
+        apply :player_created, {uuid: new_uuid}
       end
 
       private
 
-      def self.new_uuid
-        SecureRandom.uuid
+      def player_created(event)
+        self.uuid = event[:uuid]
       end
     end
   end
