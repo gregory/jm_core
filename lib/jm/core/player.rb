@@ -2,6 +2,9 @@ module Jm
   module Core
     class Player
       include Domain::Entity
+      EVENTS={
+        created: :player_created
+      }
 
       attribute :uuid, String
       attribute :name, String

@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Jm::Core::Player do
+  let(:events){ described_class::EVENTS }
   describe '#create' do
     let(:params){ { name: 'foo', nick: 'bar' } }
     let(:listener){ double(:listener) }
@@ -15,7 +16,7 @@ describe Jm::Core::Player do
     end
 
     it 'publish a player_created event with the created event' do
-      listener.should_receive(:player_created).with({ uuid: uuid })
+      listener.should_receive(events[:created]).with({ uuid: uuid })
       subject
     end
 
