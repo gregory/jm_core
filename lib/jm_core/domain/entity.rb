@@ -2,7 +2,7 @@ require 'virtus'
 require 'wisper'
 require 'securerandom'
 
-module Jm
+module JmCore
   module Domain
     module Entity
       def self.included(klass)

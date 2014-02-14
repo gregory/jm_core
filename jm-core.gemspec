@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'jm/core/version'
+require 'jm_core/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "jm-core"
-  spec.version       = Jm::Core::VERSION
+  spec.name          = "jm_core"
+  spec.version       = JmCore::VERSION
   spec.authors       = ["gregory"]
   spec.email         = ["greg2502@gmail.com"]
   spec.description   = %q{JM code logic}

@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Jm::Domain::Entity do
+describe JmCore::Domain::Entity do
   it{ should be_kind_of Module}
 
   context 'when included' do
     let(:host_class) do
       Class.new do |klass|
-        klass.send(:include, Jm::Domain::Entity)
+        klass.send(:include, JmCore::Domain::Entity)
       end
     end
     let(:listener){ double(:listener) }

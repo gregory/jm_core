@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Jm::Core::Player do
+describe JmCore::Player do
   let(:events){ described_class::EVENTS }
   describe '#create' do
     let(:params){ { name: 'foo', nick: 'bar' } }
